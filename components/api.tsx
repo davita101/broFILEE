@@ -42,8 +42,12 @@ const WeatherComponent: React.FC = () => {
             }
             const result = await response.json()
             setWeatherData(result)
-        } catch (error: any) {
-            setError(error.message)
+        } catch (error: unknown) {
+            if (error instanceof Error) {
+                setError(error.message) // Safely access error.message
+            } else {
+                setError('An unknown error occurred')
+            }
         }
     }, [valueUpdate])
 
