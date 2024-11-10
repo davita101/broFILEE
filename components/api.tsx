@@ -66,8 +66,9 @@ const WeatherComponent: React.FC = () => {
 
     if (error) {
         return (
-            <>
-                <Card className='m-4 p-4'>
+            <div className='flex flex-col justify-center items-center overflow-hidden h-screen w-full p-2'>
+
+                <Card className='m-4 p-4  sm:w-[400px] w-full'>
                     <form>
                         <div className="grid w-full items-center gap-4">
                             <div className="flex flex-col space-y-1.5">
@@ -78,12 +79,12 @@ const WeatherComponent: React.FC = () => {
                         </div>
                     </form>
                 </Card>
-                <Card className='m-4 p-4'>
+                <Card className='m-4 p-4  sm:w-[400px] w-full'>
                     <CardContent>
                         <CardTitle>No Data</CardTitle>
                     </CardContent>
                 </Card>
-            </>
+            </div>
         )
     }
 
@@ -95,8 +96,8 @@ const WeatherComponent: React.FC = () => {
     const iconUrl = weatherIconCode ? `http://openweathermap.org/img/wn/${weatherIconCode}.png` : null
 
     return (
-        <>
-            <Card className='m-4 p-4'>
+        <div className='flex flex-col overflow-hidden justify-center items-center h-screen w-full p-2'>
+            <Card className='m-4 p-4 sm:w-[400px] w-full'>
                 <form onSubmit={handleChangeUpdate}>
                     <div className="grid w-full items-center gap-4">
                         <div className="flex flex-col space-y-1.5">
@@ -107,7 +108,7 @@ const WeatherComponent: React.FC = () => {
                     </div>
                 </form>
             </Card>
-            <Card className='m-4 p-4'>
+            <Card className='m-4 p-4 sm:w-[400px] w-full'>
                 <CardContent>
                     <CardTitle>{weatherData.name}</CardTitle>
                     <div>
@@ -124,7 +125,7 @@ const WeatherComponent: React.FC = () => {
                     </div>
                 </CardContent>
             </Card>
-        </>
+        </div>
     )
 }
 
