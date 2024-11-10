@@ -1,9 +1,8 @@
 "use client"
-import React, { ReactEventHandler, useEffect, useState } from 'react'
+import React, {useEffect, useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
 import { Label } from '@radix-ui/react-label'
 import { Input } from "@/components/ui/input"
-import Image from 'next/image'
 import { Button } from './ui/button'
 
 const WeatherComponent: React.FC = () => {
